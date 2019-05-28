@@ -39,6 +39,32 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "outputPath": "dist/production",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }, 
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ],
+              "outputPath": "dist/test",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -101,6 +127,28 @@
             ],
             "exclude": [
               "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "route-test-test": {
+      "root" : "",
+      "sourceRoot": "src",
+      "projectType" : "application",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.spec.json"
+            ],
+            "tslintConfig": "tslint.spec.json",
+            "exclude": [
+              "**/node_modules/**"
+            ],
+            "files": [
+              "**/*.spec.ts"
             ]
           }
         }

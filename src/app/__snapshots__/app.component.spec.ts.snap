@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppComponent snapshot should match snapshot 1`] = `
+<app-root
+  title={[Function String]}
+>
+  <div
+    style="text-align:center"
+  >
+    <mat-toolbar>
+      This header is on every page
+    </mat-toolbar>
+    <router-outlet />
+  </div>
+</app-root>
+`;
