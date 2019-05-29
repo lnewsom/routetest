@@ -98,4 +98,8 @@ https://jestjs.io/
 
 https://brianflove.com/2018/05/26/angular-jest-testing/
 
+## Chance.js
+Chance is a great library for providing randomized data. Follow the install instructions at this link:
+https://chancejs.com/usage/node.html
+
 
