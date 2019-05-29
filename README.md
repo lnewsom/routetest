@@ -35,6 +35,14 @@ Create a file called jest.config.ts in the project root with the following code:
             "/src/jestGlobalMocks.ts/",
             "/src/setup-jest.ts"
         ],
+          coverageThreshold: {
+            global: {
+              branches: 100,
+              functions: 100,
+              lines: 100,
+              statements: 100
+             }
+        },
         preset: "jest-preset-angular",
         roots:['src'],
         setupFilesAfterEnv: ["<rootDir>/src/setup-jest.ts"],
@@ -54,6 +62,35 @@ Alter the `tsconfig.spec.json` file types property to include the following:
       "node",
       "jest"
     ]
+```
+
+Inside the `src` directory add a file called jestGlobalMocks.ts with the following code:
+```
+Object.defineProperty(window, 'CSS', { value: null });
+Object.defineProperty(document, 'doctype', {
+ value: '<!DOCTYPE html>'
+});
+Object.defineProperty(window, 'getComputedStyle', {
+ value: () => {
+   return {
+     display: 'none',
+     appearance: ['-webkit-appearance']
+   };
+ }
+});
+
+/**
+* ISSUE: https://github.com/angular/material2/issues/7101
+* Workaround for JSDOM missing transform property
+*/
+Object.defineProperty(document.body.style, 'transform', {
+ value: () => {
+   return {
+     enumerable: true,
+     configurable: true,
+   };
+ },
+});
 ```
 
 ## Jest Testing Links
