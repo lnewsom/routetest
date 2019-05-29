@@ -15,6 +15,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `npm test` to execute the unit tests via Jest.
 Run `npm test -- -u` to run tests and update snapshots.
 
+## Set Up Jest
+install jest
+$ npm i -D jest jest-preset-angular
+
 ## Jest Testing Links
 https://jestjs.io/
 
