@@ -27,7 +27,7 @@ make sure you have the following dev dependencies in package.json. If not, add t
     "jest-preset-angular": "^7.1.1"
 ```
     
-Create a file called jest.config.ts with the following code:
+Create a file called jest.config.ts in the project root with the following code:
 ```
       module.exports = {
         coveragePathIgnorePatterns: [
