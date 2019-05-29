@@ -20,13 +20,16 @@ install jest
 $ npm i -D jest jest-preset-angular
 
 make sure you have the following dev dependencies in package.json. If not, add them and run `npm i`:
+```
     "@types/jest": "^24.0.11",
     "jest": "^24.8.0",
     "jest-mock": "^24.8.0",
-    "jest-preset-angular": "^7.1.1",
+    "jest-preset-angular": "^7.1.1"
+```
     
 Create a file called jest.config.ts with the following code:
-    module.exports = {
+```
+      module.exports = {
         coveragePathIgnorePatterns: [
             "/node_modules/",
             "/src/jestGlobalMocks.ts/",
@@ -37,8 +40,7 @@ Create a file called jest.config.ts with the following code:
         setupFilesAfterEnv: ["<rootDir>/src/setup-jest.ts"],
         testPathIgnorePatterns: ["<rootDir>/src/environments/"]
     }
-  
-
+```
 
 ## Jest Testing Links
 https://jestjs.io/
