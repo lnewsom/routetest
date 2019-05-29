@@ -42,6 +42,12 @@ Create a file called jest.config.ts with the following code:
     }
 ```
 
+Create a file inside the `src` directory called setup-jest.ts with the following code:
+```
+import 'jest-preset-angular';
+import './setup-jest';
+```
+
 ## Jest Testing Links
 https://jestjs.io/
 
