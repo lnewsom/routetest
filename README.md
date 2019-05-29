@@ -48,6 +48,14 @@ import 'jest-preset-angular';
 import './setup-jest';
 ```
 
+Alter the `tsconfig.spec.json` file types property to include the following:
+```
+    "types": [
+      "node",
+      "jest"
+    ]
+```
+
 ## Jest Testing Links
 https://jestjs.io/
 
