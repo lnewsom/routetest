@@ -19,6 +19,12 @@ Run `npm test -- -u` to run tests and update snapshots.
 install jest
 $ npm i -D jest jest-preset-angular
 
+make sure you have the following dev dependencies in package.json. If not, add them and run `npm i`:
+    "@types/jest": "^24.0.11",
+    "jest": "^24.8.0",
+    "jest-mock": "^24.8.0",
+    "jest-preset-angular": "^7.1.1",
+
 ## Jest Testing Links
 https://jestjs.io/
 
