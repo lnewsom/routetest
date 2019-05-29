@@ -7,13 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./core.component.scss']
 })
 export class CoreComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute) { }
+  public coreId: string;
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.parent.params.subscribe((params) => {
-      console.log('Core Params: ' , params);
+    this.route.params.subscribe(params => {
+      console.log('Core Params: ', params);
+      this.coreId = params['coreId'];
     });
   }
-
 }

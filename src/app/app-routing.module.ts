@@ -4,7 +4,7 @@ import { CoreComponent } from './core/core.component';
 import { FeatureComponent } from './feature/feature.component';
 
 const routes: Routes = [
-  {path: 'core/:core', component: CoreComponent,
+  {path: 'core/:coreId', component: CoreComponent,
   children: [
     { path: 'feature' , component: FeatureComponent}
   ]}

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatureComponent snapshot matches 1`] = `
+<app-feature
+  route={[Function ActivatedRoute]}
+>
+  <p>
+     feature works!
+  
+  </p>
+</app-feature>
+`;

@@ -1,25 +1,44 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Chance } from 'chance';
 import { CoreComponent } from './core.component';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { async, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
+const chance: Chance.Chance = new Chance();
+jest.mock('@angular/router');
 
 describe('CoreComponent', () => {
-  let component: CoreComponent;
-  let fixture: ComponentFixture<CoreComponent>;
+  const expectedCoreId: string = chance.string();
+  let mockedActivatedRoute: ActivatedRoute;
+  let underTest: CoreComponent;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CoreComponent ]
-    })
-    .compileComponents();
-  }));
+  describe('ngOnInit', () => {
+    beforeEach(() => {
+      mockedActivatedRoute = new ActivatedRoute();
+      mockedActivatedRoute.params = of({coreId: expectedCoreId});
+      underTest = new CoreComponent(mockedActivatedRoute);
+      underTest.ngOnInit();
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CoreComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    test('sets the correct coreId', () => {
+      expect(underTest.coreId).toEqual(expectedCoreId);
+    });
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('snapshot', () => {
+    beforeEach(async(() => {
+      TestBed.configureTestingModule({
+        providers: [ActivatedRoute],
+        declarations: [CoreComponent],
+        schemas: [NO_ERRORS_SCHEMA]
+      }).compileComponents();
+    }));
+
+    test('snapshot matches', () => {
+      const fixture = TestBed.createComponent(CoreComponent);
+      expect(fixture).toMatchSnapshot();
+    });
   });
+
 });

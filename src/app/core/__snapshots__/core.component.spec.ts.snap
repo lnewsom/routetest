@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoreComponent snapshot snapshot matches 1`] = `
+<app-core
+  route={[Function ActivatedRoute]}
+>
+  <app-header /><router-outlet />
+</app-core>
+`;
