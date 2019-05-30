@@ -15,6 +15,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `npm test` to execute the unit tests via Jest.
 Run `npm test -- -u` to run tests and update snapshots.
 
+## Why Jest?
+Jest is designed to test javascript while Testbed is designed to specifically test javascript for Angular. The set up for TestBed is more involved, and requires generating mini-Modules within the test. Since TestBed will actually try to compile the components it is necessary to either provide all dependencies for each component tied to the component undertest or use a schema like NO_ERRORS_SCHEMA to prevent dependency errors. Jest by nature is only testing the component undertest without attempting to compile the entire module, so providing a shallow mock of the dependencies is enough to allow the tests to run.
+
 ## Set Up Jest
 install jest
 $ npm i -D jest jest-preset-angular
